@@ -1,0 +1,19 @@
+# Загрузка необходимых библиотек
+import pandas as pd
+from pymystem3 import Mystem
+import plotly.graph_objects as go
+import plotly.express as px
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
+
+# Чтение данных из файла txt
+df = pd.read_csv('/content/tikhonov-clean.txt', sep='\t', header=None, names=['lemma', 'morphemic_structure'])
+# Добавление нового столбца 'author' со значением 'КЕ'
+df['author'] = 'T'
+
+# Вывод датасета
+df.head()
+
+# Сохранение файла в новом формате
+df.to_csv('tikhonov.csv')
+
